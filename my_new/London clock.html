@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>London Digital Clock</title>
+</head>
+<body>
+
+    <h2>London, United Kingdom</h2>
+    <h1 id="clock"></h1>
+
+    <script>
+        function displayLondonTime() {
+            const time = new Date().toLocaleTimeString("en-GB", {
+                timeZone: "Europe/London",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: false
+            });
+
+            document.getElementById("clock").textContent = time;
+        }
+
+        displayLondonTime();
+        setInterval(displayLondonTime, 1000);
+    </script>
+
+</body>
+</html>
